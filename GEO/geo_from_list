@@ -1,0 +1,16 @@
+# remember to pip install geopy
+from geopy.geocoders import Nominatim
+geolocator = Nominatim()
+#my_address = input("Enter new address to check: ")
+my_address = ["Bialystok", "Warszawa","Wrocław","Poznań","Katowice"]
+
+file = open("Lokalizacje.txt",'w')
+
+for i in my_address:
+    location = geolocator.geocode(i, timeout=2)
+    print(location.address)
+    print(location.latitude, location.longitude)
+    lat_lon= (location.address, location.latitude, location.longitude)
+    print("\n")
+    file.writelines(str(lat_lon)+"\n")
+file.close()
