@@ -1,2 +1,2 @@
 # GeoLocator
-# Checking for location.latitude, location.longitude
+Checking for location.latitude, location.longitude
